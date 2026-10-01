@@ -1,0 +1,230 @@
+﻿//Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+
+IDI_TOMBMAPEDITOR       ICON         "TombMapEditor.ico"
+IDI_SMALL               ICON         "small.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_TOMBMAPEDITOR MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New Map",                IDM_NEW_MAP
+        MENUITEM "&Save Map",               IDM_SAVE_MAP
+        MENUITEM "&Load Map",               IDM_LOAD_MAP
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                   IDM_EXIT
+    END
+    POPUP "&Tools"
+    BEGIN
+        MENUITEM "&Enable Overlapping Textures", IDM_OVERLAPPING, CHECKED
+        MENUITEM SEPARATOR
+        MENUITEM "&Smoothify Corners", IDM_CORNERS
+        MENUITEM "&Check for Leaks", IDM_LEAKS
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Show Gridlines",         IDM_SHOW_GRIDLINES, CHECKED
+        MENUITEM "&Show Toolbox",           IDM_SHOW_TOOLBOX
+    END
+    POPUP "&Map"
+    BEGIN
+        MENUITEM "&Enable Saftey Checks", IDM_CHECK, CHECKED
+        MENUITEM "&Settings", IDM_SETTINGS
+        MENUITEM SEPARATOR
+        MENUITEM "&About ...",              IDM_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_TOMBMAPEDITOR ACCELERATORS
+BEGIN
+    "?",            IDM_ABOUT,              ASCII,  ALT
+    "/",            IDM_ABOUT,              ASCII,  ALT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 170, 62
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About TombMapEditor"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    ICON            IDI_TOMBMAPEDITOR,IDC_STATIC,14,14,21,20
+    LTEXT           "TombMapEditor, Version 1.0",IDC_STATIC,42,14,114,8,SS_NOPREFIX
+    LTEXT           "Copyright (c) 2026",IDC_STATIC,42,26,114,8
+    DEFPUSHBUTTON   "OK",IDOK,113,41,50,14,WS_GROUP
+END
+
+IDD_BAT_DIALOG DIALOGEX 0, 0, 200, 140
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Bat Enemy"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT "Range:", -1, 10, 15, 40, 10
+    EDITTEXT IDC_RANGE_EDIT, 60, 10, 50, 15, ES_NUMBER
+    LTEXT "Patrol:", -1, 10, 40, 40, 10
+    COMBOBOX IDC_PATROL_COMBO, 60, 35, 80, 60, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL "Reverse Direction", IDC_REVERSE_CHECK, "Button", BS_AUTOCHECKBOX | WS_TABSTOP, 10, 60, 100, 15
+    PUSHBUTTON "OK", IDOK_BAT, 40, 90, 50, 20
+    PUSHBUTTON "Cancel", IDCANCEL_BAT, 110, 90, 50, 20
+END
+
+IDD_NEWMAP_DIALOG DIALOGEX 0, 0, 280, 190
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Create New Map"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT "Map Name:", -1, 20, 15, 60, 10
+    EDITTEXT IDC_MAP_NAME_EDIT, 90, 13, 150, 14, ES_AUTOHSCROLL
+    
+    LTEXT "Next Map (optional):", -1, 20, 35, 80, 10
+    EDITTEXT IDC_NEXTMAP_EDIT, 90, 33, 150, 14, ES_AUTOHSCROLL
+    
+    LTEXT "Map Width:", -1, 20, 55, 60, 10
+    EDITTEXT IDC_MAP_WIDTH_EDIT, 90, 53, 50, 14, ES_NUMBER | ES_AUTOHSCROLL
+    
+    LTEXT "Map Height:", -1, 20, 75, 60, 10
+    EDITTEXT IDC_MAP_HEIGHT_EDIT, 90, 73, 50, 14, ES_NUMBER | ES_AUTOHSCROLL
+    
+    LTEXT "Theme:", -1, 20, 100, 60, 10
+    COMBOBOX IDC_THEME_COMBO, 90, 98, 150, 100, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    
+    PUSHBUTTON "Create", IDC_CREATE_BTN, 80, 140, 50, 20
+    PUSHBUTTON "Cancel", IDC_CANCEL_BTN, 150, 140, 50, 20
+END
+
+IDD_SETTINGS_DIALOG DIALOGEX 0, 0, 280, 200
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Map Settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT "Map Name:", -1, 20, 15, 60, 10
+    EDITTEXT IDC_SETTINGS_NAME_EDIT, 90, 13, 150, 14, ES_AUTOHSCROLL
+    
+    LTEXT "Next Map (optional):", -1, 20, 35, 80, 10
+    EDITTEXT IDC_SETTINGS_NEXTMAP_EDIT, 90, 33, 150, 14, ES_AUTOHSCROLL
+    
+    LTEXT "Map Width:", -1, 20, 55, 60, 10
+    EDITTEXT IDC_SETTINGS_WIDTH_EDIT, 90, 53, 50, 14, ES_NUMBER | ES_AUTOHSCROLL
+    
+    LTEXT "Map Height:", -1, 20, 75, 60, 10
+    EDITTEXT IDC_SETTINGS_HEIGHT_EDIT, 90, 73, 50, 14, ES_NUMBER | ES_AUTOHSCROLL
+    
+    LTEXT "Theme:", -1, 20, 100, 60, 10
+    COMBOBOX IDC_SETTINGS_THEME_COMBO, 90, 98, 150, 100, CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    
+    PUSHBUTTON "Apply", IDC_SETTINGS_APPLY, 80, 140, 50, 20
+    PUSHBUTTON "Cancel", IDC_SETTINGS_CANCEL, 150, 140, 50, 20
+END
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+1 TEXTINCLUDE
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+   IDC_TOMBMAPEDITOR   "TOMBMAPEDITOR"
+   IDS_APP_TITLE       "TombMapEditor"
+END
+
+#endif
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE resource.
+//
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
